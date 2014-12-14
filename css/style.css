@@ -1,0 +1,33 @@
+button {
+	font-size: 16px;
+	font-weight: bold;
+	font-family: Arial;
+	border: solid black 1px;
+}
+.add_terrain {
+	display: block;
+	background-color: #3ed136;
+	margin: 0 auto;
+}
+.remove_terrain {
+	background-color: #ff0000;
+}
+.panel_header {
+	text-align: center;
+}
+.panel {
+	border: solid black 1px;
+	border-radius: 10px;
+}
+.input_item {
+	padding: 5px;
+}
+#controlPanel {
+	position: fixed;
+	padding: 20px;
+	right: 0px;
+	top: 0px;
+	background-color: rgba(150, 150, 70, 0.8);
+	border: solid black 1px;
+	border-radius: 25px;
+}

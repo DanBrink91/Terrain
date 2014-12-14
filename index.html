@@ -1,0 +1,78 @@
+	<head>
+		<title>Perlin Noise Tile-Based Terrain Generator</title>
+		<link rel="stylesheet" href="css/style.css" />
+		
+		<script src="js/lib/pixi.js" defer></script>
+		<script src="js/lib/simplex.js" defer></script>
+
+		<script src="js/terrain.js" defer></script>
+		<script src="js/panel.js" defer></script>
+	</head>
+	<body>
+		<div id="drawArea"></div>
+		<div id="controlPanel">
+			<div id="noisePanel" class="panel">
+				<h2 class="panel_header">Noise</h2>
+				<div class="input_item">
+					<label>Seed: 
+						<input type="number" id="seed"/>
+					</label>
+					<button id="randomSeed">Random</button>
+				</div>
+				<div class="input_item">
+					<label>Smoothing Function:	
+						<select id="smoothFunction">
+							<option>None</option>
+							<option>Average</option>
+							<option>Min</option>
+							<option>Max</option>
+						</select>
+					</label>
+				</div>
+				<button id="noiseButton">Update Noise</button>
+			</div>
+			<div class="panel">
+				<h2 class="panel_header">Terrain Rules</h2>
+				<div>
+					<table border="1px">
+						<thead>
+							<tr>
+								<th>Condition</th>
+								<th>Color</th>
+								<th>Remove</th>
+							</tr>
+						</thead>
+						<tbody id="terrainRules">
+						</tbody>
+					</table>
+				</div>
+				<div id="rulesInput">
+					<div>
+						<label>Noise Threshold:
+							<input type="number" min="-1.0" max="1.0" value="0.0" step="0.1" id="noiseThreshold" />
+						</label>
+					</div>
+					<div>
+						<label>Operator:
+							<select id="operator">
+								<option value="<"><</option>
+								<option value=">">></option>
+							</select>
+						</label>
+					</div>
+					<div>
+						<label>Terrain Display:
+							<input type="color" id="terrainColor" />
+						</label>
+					</div>
+					<button id="addTerrain" class="add_terrain">Add</button>
+				</div>
+				<button class="remove_terrain">-</button>
+			</div>
+			<div>
+				<label>Draw Lines
+					<input type="checkbox" id="drawLines" checked/>
+				</label>
+			</div>
+		</div>
+	</body>
